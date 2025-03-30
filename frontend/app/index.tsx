@@ -3,12 +3,12 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 
 export default function HomeScreen() {
   return (
-    <SafeAreaView style={styles.container}>
-      <ScrollView style={styles.scrollView}>
+    <SafeAreaView style={styles.container} edges={['top']}>
+      <ScrollView style={styles.scrollView} contentContainerStyle={styles.scrollContent}>
         {/* Header Section */}
         <View style={styles.header}>
-          <Text style={styles.headerTitle}>Welcome Back!</Text>
-          <Text style={styles.headerSubtitle}>Track your fitness journey</Text>
+          <Text style={styles.headerTitle}>Welcome to Go Iron!</Text>
+          <Text style={styles.headerSubtitle}>Track your weightlifting progression</Text>
         </View>
 
         {/* Quick Actions */}
@@ -25,14 +25,19 @@ export default function HomeScreen() {
         <View style={styles.section}>
           <Text style={styles.sectionTitle}>Recent Workouts</Text>
           <View style={styles.workoutCard}>
-            <Text style={styles.workoutTitle}>Upper Body</Text>
+            <Text style={styles.workoutTitle}>Push Day</Text>
             <Text style={styles.workoutDate}>Yesterday</Text>
-            <Text style={styles.workoutStats}>8 exercises • 45 mins</Text>
+            <Text style={styles.workoutStats}>6 exercises • 70 mins</Text>
           </View>
           <View style={styles.workoutCard}>
             <Text style={styles.workoutTitle}>Leg Day</Text>
             <Text style={styles.workoutDate}>2 days ago</Text>
-            <Text style={styles.workoutStats}>6 exercises • 50 mins</Text>
+            <Text style={styles.workoutStats}>5 exercises • 50 mins</Text>
+          </View>
+          <View style={styles.workoutCard}>
+            <Text style={styles.workoutTitle}>Pull Day</Text>
+            <Text style={styles.workoutDate}>3 days ago</Text>
+            <Text style={styles.workoutStats}>6 exercises • 65 mins</Text>
           </View>
         </View>
 
@@ -58,6 +63,9 @@ const styles = StyleSheet.create({
   scrollView: {
     flex: 1,
   },
+  scrollContent: {
+    flexGrow: 1,
+  },
   header: {
     padding: 20,
     backgroundColor: '#fff',
@@ -74,15 +82,17 @@ const styles = StyleSheet.create({
   },
   quickActions: {
     flexDirection: 'row',
-    padding: 15,
-    justifyContent: 'space-between',
+    padding: 20,
+    gap: 15,
   },
   actionButton: {
+    flex: 1,
     backgroundColor: '#007AFF',
-    padding: 15,
-    borderRadius: 10,
-    width: '48%',
+    padding: 16,
+    borderRadius: 12,
     alignItems: 'center',
+    justifyContent: 'center',
+    minHeight: 56,
   },
   actionButtonText: {
     color: '#fff',
