@@ -16,3 +16,6 @@ This app gamifies the weightlifting process, allowing users to track their worko
 - **Authentication**: Firebase Authentication
 - **Hosting**: Firebase Hosting
 - **Real-time Features**: Firebase Firestore
+
+---
+Last updated: 2024-03-19
