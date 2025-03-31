@@ -1,7 +1,10 @@
-import { StyleSheet, View, Text, ScrollView } from 'react-native';
+import { StyleSheet, View, Text, ScrollView, TouchableOpacity } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
+import { useRouter } from 'expo-router';
 
 export default function WorkoutsScreen() {
+  const router = useRouter();
+
   return (
     <SafeAreaView style={styles.container} edges={['top']}>
       <ScrollView style={styles.scrollView} contentContainerStyle={styles.scrollContent}>
@@ -9,6 +12,14 @@ export default function WorkoutsScreen() {
           <Text style={styles.headerTitle}>Workouts</Text>
           <Text style={styles.headerSubtitle}>Track and manage your workouts</Text>
         </View>
+
+        {/* Start Workout Button */}
+        <TouchableOpacity 
+          style={styles.startWorkoutButton}
+          onPress={() => router.push('/workout')}
+        >
+          <Text style={styles.startWorkoutText}>Start New Workout</Text>
+        </TouchableOpacity>
 
         <View style={styles.section}>
           <Text style={styles.sectionTitle}>Upcoming Workouts</Text>
@@ -68,6 +79,18 @@ const styles = StyleSheet.create({
     fontSize: 16,
     color: '#666',
     marginTop: 5,
+  },
+  startWorkoutButton: {
+    backgroundColor: '#007AFF',
+    margin: 20,
+    padding: 16,
+    borderRadius: 12,
+    alignItems: 'center',
+  },
+  startWorkoutText: {
+    color: '#fff',
+    fontSize: 16,
+    fontWeight: '600',
   },
   section: {
     padding: 20,

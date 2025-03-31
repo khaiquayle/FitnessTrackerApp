@@ -44,6 +44,16 @@ export default function RootLayout() {
           }}
         />
         <Tabs.Screen
+          name="workout"
+          options={{
+            title: "Workout",
+            tabBarIcon: ({ color, size }) => (
+              <FontAwesome name="bolt" size={size} color={color} />
+            ),
+            headerShown: false,
+          }}
+        />
+        <Tabs.Screen
           name="profile"
           options={{
             title: "Profile",
